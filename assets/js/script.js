@@ -2,6 +2,7 @@ var startButton = document.getElementById("startbtn");
 var questionBoxSection = document.getElementById("questionBox");
 var introSection = document.querySelector(".intro");
 var questionDiv = document.querySelector("#questions");
+var timerEl = document.getElementById('countdown')
 
 var qIndex = 0;
 //CREATE QUESTIONS
@@ -21,7 +22,6 @@ var questions = [
 
 function startQuiz() {
   console.log("Started");
-  //startButton.classList.add("hidden");
 
   introSection.classList.add("hidden");
 
@@ -41,7 +41,7 @@ function nextQuestion() {
   //add text to that button (one of the answers)
   //append the button to the answerBtns div
 
-  //Do an onlick event, call selecCorrectAnswer to check answer;
+  //Do an onclick event, call selectCorrectAnswer to check answer;
 }
 
 function selectCorrectAnswer() {
