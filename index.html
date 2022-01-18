@@ -8,6 +8,13 @@
     <title>Code Quiz: Let's Test your Code knowledge!</title>
   </head>
   <body>
+    <nav>
+      <div class="vwHigh">
+        <a href="./">View High Scores</a>
+      </div>
+      <!-- Does timer go here??-->
+    </nav>
+
     <section class="intro">
       <h1>Coding Quiz Challenge</h1>
       <p>
@@ -15,26 +22,30 @@
         limit. Keep in mind that incorrect answers will penalize your score and
         time by ten seconds!
       </p>
-      <div class="start">
-        <button id="startbtn" class="startbtn abtn">Start Quiz</button>
-      </div>
+      
+        <button id="startbtn" class="start">Start Quiz</button>
     </section>
-
-<!--Beginning of quiz questions-->
-    <section class="questionBox">
+    <br />
+    <!--Beginning of quiz questions-->
+    <!--The section & first div have the same class name. Might cause a problem later. Having section as the hidden part might be enough-->
+    <section id="questionBox" class="hidden">
       <div id="questions" class="hidden">
         <div id="answerBtns" class="answerGrid">
-          <button class="abtn">Question 1</button>
-          <button class="abtn">Question 2</button>
-          <button class="abtn">Question 3</button>
-          <button class="abtn">Question 4</button>
+          <button class="anbtn">Question 1</button>
+          <button class="anbtn">Question 2</button>
+          <button class="anbtn">Question 3</button>
+          <button class="anbtn">Question 4</button>
         </div>
+        <br />
+        <!--Should I make a <p> tag or H4 tag here with right or wrong? and mark it with 'hidden' class? -->
+        <!-- <h4 id="correctCmt" class="hidden">Correct!</h4>
+        <h4 id="wrongCmt" class="hidden">Wrong!</h4> -->
       </div>
       <!-- <div class="start">
         <button id="startbtn" class="startbtn abtn">Start Quiz</button>
       </div> -->
     </section>
-<!-- End of quiz questions -->
+    <!-- End of quiz questions -->
     <script src="assets/js/script.js"></script>
   </body>
 </html>
