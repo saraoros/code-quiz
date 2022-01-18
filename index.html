@@ -9,9 +9,9 @@
   </head>
   <body>
     <nav>
-      <div class="vwHigh">
-        <a href="./">View High Scores</a>
-      </div>
+      <!-- <div class="vwHigh"> -->
+      <a href="./">View High Scores</a>
+      <!-- </div>-->
       <!-- Does timer go here??-->
     </nav>
 
@@ -22,24 +22,23 @@
         limit. Keep in mind that incorrect answers will penalize your score and
         time by ten seconds!
       </p>
-      
-        <button id="startbtn" class="start">Start Quiz</button>
+
+      <button id="startbtn" class="start">Start Quiz</button>
     </section>
     <br />
     <!--Beginning of quiz questions-->
     <!--The section & first div have the same class name. Might cause a problem later. Having section as the hidden part might be enough-->
     <section id="questionBox" class="hidden">
-      <div id="questions" class="hidden">
-        <div id="answerBtns" class="answerGrid">
-          <button class="anbtn">Question 1</button>
-          <button class="anbtn">Question 2</button>
-          <button class="anbtn">Question 3</button>
-          <button class="anbtn">Question 4</button>
-        </div>
-        <br />
+      <div id="questions">
         <!--Should I make a <p> tag or H4 tag here with right or wrong? and mark it with 'hidden' class? -->
         <!-- <h4 id="correctCmt" class="hidden">Correct!</h4>
         <h4 id="wrongCmt" class="hidden">Wrong!</h4> -->
+      </div>
+      <div id="answerBtns" class="answerGrid">
+        <button class="anbtn1">Question 1</button>
+        <button class="anbtn2">Question 2</button>
+        <button class="anbtn3">Question 3</button>
+        <button class="anbtn4">Question 4</button>
       </div>
       <!-- <div class="start">
         <button id="startbtn" class="startbtn abtn">Start Quiz</button>
