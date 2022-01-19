@@ -4,7 +4,7 @@ var introSection = document.querySelector(".intro");
 var questionDiv = document.querySelector("#questions");
 var timerEl = document.getElementById("countdown");
 var randomQuestions, qIndex;
-
+var answerButtons = document.getElementById("answerBtns");
 //var qIndex = 0;
 
 //CREATE QUESTIONS
@@ -99,8 +99,28 @@ function startQuiz() {
   nextQuestion();
 }
 
-function nextQuestion() {
+function viewQuestion(question) {
+  //the line below was originally under 'nextQuestion' function done by Tutor
   questionDiv.textContent = questions[qIndex].question;
+ 
+
+  questionDiv.answers.forEach((answer) => {
+    // line below is from Web Dev Simplified Youtube video
+    var button = document.createElement("button");
+    button.innerText = answer.text;
+    button.classList.add("anbtn1", "anbtn2", "anbtn3", "anbtn4");
+    if (answer.correct) {
+      button.dataset.correct = answer.correct;
+    }
+    button.addEventListener("click", selectAnswer);
+    answerButtons.appendChild(button);
+    // end code from Web Dev Simplified
+  });
+}
+
+
+function nextQuestion() {
+  viewQuestion(randomQuestions[qIndex]);
 
   //Do same thing for answers HERE
   //Loop through answer array

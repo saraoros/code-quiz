@@ -55,7 +55,9 @@ body {
   background-color: ivory;
 }
 
+
 #answerBtns {
+  font-weight: bold;
   display: grid;
   gap: 10px;
   margin: 10px 0;
@@ -63,6 +65,7 @@ body {
 }
 
 #startbtn {
+  font-weight: bold;
     margin-left: 33%;
   display: flex;
   text-align: center;
@@ -81,6 +84,7 @@ body {
   border-radius: 5px;
   color: #fff;
   max-width: fit-content;
+  font-weight: bold;
   font-size: medium;
   align-items: center;
   justify-content: center;
