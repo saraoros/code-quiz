@@ -7,10 +7,9 @@ var penalty = 10;
 var timeLeft = 75;
 var timer = document.querySelector("#startButton");
 var questionsDiv = document.querySelector("#questionsDiv");
-var wrapper = document.querySelector("intro");
+var intro = document.querySelector("intro");
 var holdInterval = 0;
 //End of global variables
-
 
 //Start of questions, text and answer section
 var questions = [
@@ -82,26 +81,23 @@ function randomQuestions(qIndex) {
     listItem.textContent = newItem;
     questionsDiv.appendChild(mkParagraph);
     mkParagraph.appendChild(listItem);
-    listItem.addEventListener("click", compare);
+    listItem.addEventListener("click", scoreKeeper);
   });
 }
 
 
-function compare(event) {
+function scoreKeeper(event) {
   var element = event.target;
 
   if (element.matches("li")) {
     var createDiv = document.createElement("div");
     createDiv.setAttribute("id", "createDiv");
-    // Correct condition
     if (element.textContent == questions[qIndex].answer) {
       score++;
       createDiv.textContent = "Correct!";
-      // Correct condition
     } else {
-      // Will deduct -5 seconds off timeLeft for wrong answers
       timeLeft  = timeLeft - penalty;
-      createDiv.textContent = "Sorry, not quite!";
+      createDiv.textContent = "Sorry, that's not quite the answer!";
     }
   }
   qIndex++;
@@ -111,13 +107,56 @@ function compare(event) {
     createDiv.textContent =
       "You did it! Let's see what your score is!" +
       " " +
-      "You got  " +
-      score +
-      "/" +
-      questions.length +
-      " Correct!";
+      "You got  " + score + "/" + questions.length + " Correct!";
   } else {
     render(qIndex);
   }
   questionsDiv.appendChild(createDiv);
 }
+
+function finishedQuiz() {
+ questionsDiv.innerHTML = "";
+ timeStamp.innerHTML = "";
+ 
+ var createH1 = document.createElement("h1");
+ createH1.setAttribute("id", "createH1");
+ createH1.textContent = ""
+ 
+ questionsDiv.appendChild(createH1);
+ 
+var finalScore = document.createElement("p");
+finalScore.setAttribute("id", "finalScore");
+
+questionsDiv.appendChild(finalScore);
+
+// Final score and time for loop
+if (timeLeft >= 0) {
+    var timeRemaining = timeLeft;
+    var scoreTotal= document.createElement("p");
+    clearInterval(holdInterval);
+    finalScore.textContent = "Your final score is " + timeRemaining;
+
+    questionsDiv.appendChild(scoreTotal);
+}
+
+// Start of high scores page setup
+var userName = document.createElement("label");
+userName.setAttribute("id", "username");
+userName.textContent = "Enter your name: ";
+
+questionsDiv.appendChild(userName);
+
+var inputBox = document.createElement("input");
+inputBox.setAttribute("type", "text");
+inputBox.setAttribute("id", "name");
+inputBox.textContent = "";
+
+questionsDiv.appendChild(inputBox);
+
+var submitButton = document.createElement("button");
+submitButton.setAttribute("type", "submit");
+submitButton.setAttribute("id", "submitButton");
+submitButton.textContent = "Submit";
+
+questionsDiv.appendChild(submitButton)};
+

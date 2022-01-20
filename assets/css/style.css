@@ -6,11 +6,6 @@
 }
 
 
-:root {
-  --hue-neutral: 200;
-  --hue-wrong: 0;
-  --hue-correct: 145;
-}
 
 header {
 padding: 0px 8px;
@@ -25,11 +20,16 @@ border-radius: 10%;
 
 nav {
 /* background-color: lightblue; */
+color: red;
+background-color: lightgray;
+font-weight: bold;
+font-size: 24px;
   display: flex;
-  justify-content: start;
-  align-items: start;
+  justify-content: end;
+  align-items: flex-end;
   padding: 5px 5px;
-
+  margin-left: 70%;
+width: 200px;
 }
 
 #countdown {
@@ -108,14 +108,14 @@ body {
   transition: 0.5s;
 }
 
-.btn.correct {
+/* .btn.correct {
   --hue: var(--hue-correct);
   color: black;
 }
 
 .btn.wrong {
   --hue: var(--hue-wrong);
-}
+} */
 
 
 .hidden {
