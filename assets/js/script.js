@@ -57,7 +57,7 @@ timer.addEventListener("click", function () {
       if (timeLeft <= 0) {
         clearInterval(holdInterval);
         finishedQuiz();
-        timeStamp.textContent = "Uh oh! Sorry but your time's up!";
+        timeStamp.textContent = "Oops! Looks like your time's up!";
       }
     }, 1000);
   }
@@ -103,7 +103,7 @@ function scoreKeeper(event) {
   if (qIndex >= questions.length) {
     finishedQuiz();
     createDiv.textContent =
-      "You did it! Let's see what your score is!" +
+      "You did it!" +
       " " +
       "You got  " +
       score +
@@ -158,7 +158,7 @@ function finishedQuiz() {
   var submitButton = document.createElement("button");
   submitButton.setAttribute("type", "submit");
   submitButton.setAttribute("id", "submitButton");
-  submitButton.textContent = "Submit";
+  submitButton.textContent = "Submit Your Score";
 
   questionsDiv.appendChild(submitButton);
 
