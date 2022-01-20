@@ -5,14 +5,6 @@
   font-family: Arial, "Times New Roman", Georgia, Times, serif;
 }
 
-header {
-  padding: 0px 8px;
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  top: 10px;
-  border-radius: 10%;
-}
 
 nav, #timeStamp {
   font-weight: bold;
@@ -20,27 +12,34 @@ nav, #timeStamp {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 20px;
+  margin: 15px;
   margin-left: 80%;
   width: 150px;
-  height: 75px;
   border-radius: 10%;
-  /* padding: 10px 10px; */
-  background-color: #598392;
+padding: 10px 10px; 
+border-color: #344e41;
+  background-color:#ddb892; 
   border: 1px solid;
   border-radius: 5px;
-  color: #fff;
-  /* max-width: fit-content; */
+  color: #800e13;
+
 }
 
 body {
-  background-color: #ae2012;
+  background-color: #eee2df;
 }
 
 .highscores {
   font-family: Verdana, Tahoma, sans-serif;
   font-size: 18px;
   text-decoration: none;
+  display: flex;
+  justify-content: start;
+  align-items: flex-start;
+  margin: 10px;
+  width: 200px;
+ 
+
 }
 
 #questiontext {
@@ -51,15 +50,13 @@ body {
 
 #questionBox,
 .intro {
-  align-items: center;
-  justify-content: center;
   width: 800px;
-  max-width: 80%;
-  border-radius: 4px;
-  box-shadow: 0 0 3px 2px;
-  border-color: #e9d8a6;
+  max-width: 60%;
+  border-radius: 5%;
+  /* box-shadow: 0 0 2px 2px; */
+  border-color: black;
   padding: 5vh;
-  margin: 25vh;
+  margin: auto;
   text-align: center;
   align-items: center;
   justify-content: center;
@@ -74,28 +71,40 @@ body {
   width: auto;
 }
 
-#startButton {
+#startButton, #submitButton {
   font-weight: bold;
   margin-left: 40%;
   display: flex;
   text-align: center;
   justify-content: center;
+ padding-top: 10px; 
+ padding-bottom: 10px;
+
 }
+
+label, text, input {
+  font-family: Verdana, Tahoma, sans-serif;
+  font-size: 16px;
+  padding-top: 10px;
+}
+
+
 
 .anbtn1,
 .anbtn2,
 .anbtn3,
 .anbtn4,
 li,
-#startButton {
+#startButton, #submitButton {
   outline: none;
   padding: 10px 20px;
-  background-color: #598392;
+  background-color: #571089;
   border: 1px solid;
+  border-color: black;
   border-radius: 5px;
   color: #fff;
   max-width: fit-content;
-  font-weight: bold;
+  font-weight: medium;
   font-size: medium;
   align-items: center;
   justify-content: center;
@@ -106,8 +115,8 @@ li,
 .anbtn2:hover,
 .anbtn3:hover,
 .anbtn4:hover,
-#startButton:hover {
-  background-color: #aec3b0;
+#startButton:hover, li:hover, #submitButton:hover {
+  background-color: #9d4edd;
   transition: 0.5s;
 }
 
