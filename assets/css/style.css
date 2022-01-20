@@ -4,6 +4,14 @@
   box-sizing: border-box;
   font-family: Arial, "Times New Roman", Georgia, Times, serif;
 }
+
+
+:root {
+  --hue-neutral: 200;
+  --hue-wrong: 0;
+  --hue-correct: 145;
+}
+
 header {
 padding: 0px 8px;
 display: flex;
@@ -99,6 +107,16 @@ body {
   background-color: #66a253;
   transition: 0.5s;
 }
+
+.btn.correct {
+  --hue: var(--hue-correct);
+  color: black;
+}
+
+.btn.wrong {
+  --hue: var(--hue-wrong);
+}
+
 
 .hidden {
   display: none;
