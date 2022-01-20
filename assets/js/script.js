@@ -47,13 +47,12 @@ var questions = [
   },
 ];
 
-
 // Start of timer
 timer.addEventListener("click", function () {
   if (holdInterval === 0) {
     holdInterval = setInterval(function () {
       timeLeft--;
-      timeStamp.textContent = "Time: " + timeLeft;
+      timeStamp.textContent = "Timer: " + timeLeft;
 
       if (timeLeft <= 0) {
         clearInterval(holdInterval);
@@ -62,21 +61,21 @@ timer.addEventListener("click", function () {
       }
     }, 1000);
   }
-  randomQuestions(qIndex);
+  showQuestions(qIndex);
 });
 //End of timer
 
-
 // Start of Question for loop
-function randomQuestions(qIndex) {
+function showQuestions(qIndex) {
   questionsDiv.innerHTML = "";
   mkParagraph.innerHTML = "";
+
   for (var i = 0; i < questions.length; i++) {
-    var userQuestion = questions[qIndex].question;
-    var userChoices = questions[qIndex].text;
-    questionsDiv.textContent = userQuestion;
+    var usersQuestion = questions[qIndex].question;
+    var questChosen = questions[qIndex].text;
+    questionsDiv.textContent = usersQuestion;
   }
-  userChoices.forEach(function (newItem) {
+  questChosen.forEach(function (newItem) {
     var listItem = document.createElement("li");
     listItem.textContent = newItem;
     questionsDiv.appendChild(mkParagraph);
@@ -84,7 +83,6 @@ function randomQuestions(qIndex) {
     listItem.addEventListener("click", scoreKeeper);
   });
 }
-
 
 function scoreKeeper(event) {
   var element = event.target;
@@ -94,9 +92,9 @@ function scoreKeeper(event) {
     createDiv.setAttribute("id", "createDiv");
     if (element.textContent == questions[qIndex].answer) {
       score++;
-      createDiv.textContent = "Correct!";
+      createDiv.textContent = "That's Correct!";
     } else {
-      timeLeft  = timeLeft - penalty;
+      timeLeft = timeLeft - penalty;
       createDiv.textContent = "Sorry, that's not quite the answer!";
     }
   }
@@ -107,56 +105,83 @@ function scoreKeeper(event) {
     createDiv.textContent =
       "You did it! Let's see what your score is!" +
       " " +
-      "You got  " + score + "/" + questions.length + " Correct!";
+      "You got  " +
+      score +
+      "/" +
+      questions.length +
+      " Correct!";
   } else {
-    render(qIndex);
+    showQuestions(qIndex);
   }
   questionsDiv.appendChild(createDiv);
 }
 
 function finishedQuiz() {
- questionsDiv.innerHTML = "";
- timeStamp.innerHTML = "";
- 
- var createH1 = document.createElement("h1");
- createH1.setAttribute("id", "createH1");
- createH1.textContent = ""
- 
- questionsDiv.appendChild(createH1);
- 
-var finalScore = document.createElement("p");
-finalScore.setAttribute("id", "finalScore");
+  questionsDiv.innerHTML = "";
+  timeStamp.innerHTML = "";
 
-questionsDiv.appendChild(finalScore);
+  var createH1 = document.createElement("h1");
+  createH1.setAttribute("id", "createH1");
+  createH1.textContent = "";
 
-// Final score and time for loop
-if (timeLeft >= 0) {
+  questionsDiv.appendChild(createH1);
+
+  var finalScore = document.createElement("p");
+  finalScore.setAttribute("id", "finalScore");
+
+  questionsDiv.appendChild(finalScore);
+
+  // Final score and time for loop
+  if (timeLeft >= 0) {
     var timeRemaining = timeLeft;
-    var scoreTotal= document.createElement("p");
+    var scoreTotal = document.createElement("p");
     clearInterval(holdInterval);
     finalScore.textContent = "Your final score is " + timeRemaining;
 
     questionsDiv.appendChild(scoreTotal);
+  }
+
+  // Start of high scores page setup
+  var userName = document.createElement("label");
+  userName.setAttribute("id", "username");
+  userName.textContent = "Enter your name: ";
+
+  questionsDiv.appendChild(userName);
+
+  var inputBox = document.createElement("input");
+  inputBox.setAttribute("type", "text");
+  inputBox.setAttribute("id", "name");
+  inputBox.textContent = "";
+
+  questionsDiv.appendChild(inputBox);
+
+  var submitButton = document.createElement("button");
+  submitButton.setAttribute("type", "submit");
+  submitButton.setAttribute("id", "submitButton");
+  submitButton.textContent = "Submit";
+
+  questionsDiv.appendChild(submitButton);
+
+  submitButton.addEventListener("click", function () {
+    var userName = inputBox.value;
+
+    if (userName === null) {
+      alert("Oops! Please enter a valid entry!");
+    } else {
+      var finalScore = {
+        name: userName,
+        score: timeRemaining,
+      };
+      console.log(finalScore);
+      var allScores = localStorage.getItem("allScores");
+      if (allScores === null) {
+        allScores = [];
+      } else {
+        allScores = JSON.parse(allScores);
+      }
+      allScores.push(finalScore);
+      var newScore = JSON.stringify(allScores);
+      localStorage.setItem("allScores", newScore);
+    }
+  });
 }
-
-// Start of high scores page setup
-var userName = document.createElement("label");
-userName.setAttribute("id", "username");
-userName.textContent = "Enter your name: ";
-
-questionsDiv.appendChild(userName);
-
-var inputBox = document.createElement("input");
-inputBox.setAttribute("type", "text");
-inputBox.setAttribute("id", "name");
-inputBox.textContent = "";
-
-questionsDiv.appendChild(inputBox);
-
-var submitButton = document.createElement("button");
-submitButton.setAttribute("type", "submit");
-submitButton.setAttribute("id", "submitButton");
-submitButton.textContent = "Submit";
-
-questionsDiv.appendChild(submitButton)};
-

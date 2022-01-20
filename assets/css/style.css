@@ -5,45 +5,49 @@
   font-family: Arial, "Times New Roman", Georgia, Times, serif;
 }
 
-
-
 header {
-padding: 0px 8px;
-display: flex;
-justify-content: space-between;
-flex-wrap: wrap;
-top: 20px;
-border-radius: 10%;
-}
-
-
-
-nav {
-/* background-color: lightblue; */
-color: red;
-background-color: lightgray;
-font-weight: bold;
-font-size: 24px;
+  padding: 0px 8px;
   display: flex;
-  justify-content: end;
-  align-items: flex-end;
-  padding: 5px 5px;
-  margin-left: 70%;
-width: 200px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  top: 10px;
+  border-radius: 10%;
 }
 
-#countdown {
-    margin-left: 70vw;
-    display: flex;
-    justify-content: end;
-    align-items: flex-end;
-    padding: 10px 10px;
+nav, #timeStamp {
+  font-weight: bold;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+  margin-left: 80%;
+  width: 150px;
+  height: 75px;
+  border-radius: 10%;
+  /* padding: 10px 10px; */
+  background-color: #598392;
+  border: 1px solid;
+  border-radius: 5px;
+  color: #fff;
+  /* max-width: fit-content; */
 }
 
 body {
-    background-color: #227c9d;
+  background-color: #ae2012;
 }
 
+.highscores {
+  font-family: Verdana, Tahoma, sans-serif;
+  font-size: 18px;
+  text-decoration: none;
+}
+
+#questiontext {
+  font-family: Verdana, Tahoma, sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+}
 
 #questionBox,
 .intro {
@@ -53,16 +57,14 @@ body {
   max-width: 80%;
   border-radius: 4px;
   box-shadow: 0 0 3px 2px;
-  border-color: #588157;
-  /* here */
+  border-color: #e9d8a6;
   padding: 5vh;
   margin: 25vh;
   text-align: center;
   align-items: center;
   justify-content: center;
-  background-color: ivory;
+  background-color: #ddb892;
 }
-
 
 #answerBtns {
   font-weight: bold;
@@ -72,9 +74,9 @@ body {
   width: auto;
 }
 
-#startbtn {
+#startButton {
   font-weight: bold;
-    margin-left: 33%;
+  margin-left: 40%;
   display: flex;
   text-align: center;
   justify-content: center;
@@ -84,10 +86,11 @@ body {
 .anbtn2,
 .anbtn3,
 .anbtn4,
-#startbtn {
+li,
+#startButton {
   outline: none;
   padding: 10px 20px;
-  background-color: #004f2d;
+  background-color: #598392;
   border: 1px solid;
   border-radius: 5px;
   color: #fff;
@@ -103,20 +106,10 @@ body {
 .anbtn2:hover,
 .anbtn3:hover,
 .anbtn4:hover,
-#startbtn:hover {
-  background-color: #66a253;
+#startButton:hover {
+  background-color: #aec3b0;
   transition: 0.5s;
 }
-
-/* .btn.correct {
-  --hue: var(--hue-correct);
-  color: black;
-}
-
-.btn.wrong {
-  --hue: var(--hue-wrong);
-} */
-
 
 .hidden {
   display: none;
