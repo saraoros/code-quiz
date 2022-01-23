@@ -74,14 +74,14 @@ body {
 
 #questiontext {
   font-family: "Roboto Condensed", sans-serif;
-  font-size: 18px;
+  font-size: 20px;
 }
 
 #questionBox,
 .intro {
   font-family: "Roboto Condensed", sans-serif;
-  font-size: 18px;
-  width: 800px;
+  font-size: 20px;
+  width: 750px;
   max-width: 60%;
   margin: auto;
   text-align: center;

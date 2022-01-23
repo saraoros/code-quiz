@@ -4,35 +4,34 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&family=Rubik&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&family=Rubik&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="html" href="hs-index.html" />
     <title>Code Quiz: Let's Test your Code knowledge!</title>
   </head>
   <body>
- <nav id="timeStamp">Timer:</nav>
-        <!-- Div for quiz content -->
-    <header>
+   <header> 
+     <nav id="timeStamp">Timer:</nav>
       <a class="highscores" href="./hs-index.html">View High Scores</a>
-     </header>
-      <div id="intro" class="intro">
-        <div id="questionsDiv">
-            <h1>Coding Quiz Challenge</h1>
-            <p id="hide">
-              Try to answer the following code-related questions within the time limit. Keep in mind that incorrect
-                answers will penalize your score and time by ten seconds!</p>
-            
-                <ul id="questiontext"></ul>
-            <!-- Buttons -->
-            <button id="startButton" class="start">Start Quiz</button>
-        </div>
-
+    </header>
+    <div id="intro" class="intro">
+      <div id="questionsDiv">
+        <h1>Coding Quiz Challenge</h1>
+        <p id="hide">
+          Try to answer the following code-related questions within the time
+          limit. Keep in mind that incorrect answers will penalize your score
+          and time by ten seconds!
+        </p>
+        <ul id="questiontext"></ul>
+        <button id="startButton" class="start">Start Quiz</button>
+      </div>
     </div>
-    
+
     <section id="questionBox" class="hidden">
       <div id="questions">
-        <!--Should I make a <p> tag or H4 tag here with right or wrong? and mark it with 'hidden' class? -->
-        <!-- <h4 id="correctCmt" class="hidden">Correct!</h4>
-        <h4 id="wrongCmt" class="hidden">Wrong!</h4> -->
       </div>
       <div id="answerBtns" class="answerGrid">
         <button class="anbtn1">Answer 1</button>
@@ -41,7 +40,6 @@
         <button class="anbtn4">Answer 4</button>
       </div>
     </section>
-    <!-- End of quiz questions -->
     <script src="assets/js/script.js"></script>
   </body>
 </html>

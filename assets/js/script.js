@@ -194,7 +194,7 @@ var back = document.querySelector("#back");
 
 clear.addEventListener("click", function () {
   localStorage.clear();
-  //location.reload();
+  location.reload();
 });
 
 var scores = localStorage.getItem("scores");
@@ -203,11 +203,11 @@ scores = JSON.parse(scores);
 if (scores !== null) {
   for (var i = 0; i < scores.length; i++) {
     var createLi = document.createElement("li");
-    createLi.textContent = scores[i].initials + " " + scores[i].score;
+    createLi.textContent = scores[i].userName + " " + scores[i].scores;
     highScores.appendChild(createLi);
   }
 }
 // go back to home page
-goBack.addEventListener("click", function () {
+back.addEventListener("click", function () {
   location.replace("./index.html");
 });
