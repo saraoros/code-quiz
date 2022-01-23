@@ -141,7 +141,7 @@ function finishedQuiz() {
     questionsDiv.appendChild(scoreTotal);
   }
 
-  // Start of high scores page setup
+  // Start of high scores input
   var userName = document.createElement("label");
   userName.setAttribute("id", "username");
   userName.textContent = "Enter your name: ";
