@@ -8,6 +8,6 @@
 
 ## Deployed Application
 
-Test your code knowledge here: 
+Test your code knowledge here: https://saraoros.github.io/code-quiz/
 
 <img src="./assets/images/code-quiz-ss.gif">
