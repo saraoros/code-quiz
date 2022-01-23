@@ -2,9 +2,38 @@
 *::before,
 *::after {
   box-sizing: border-box;
-  font-family: Arial, "Times New Roman", Georgia, Times, serif;
+  font-family: "Rubik", sans-serif;
 }
 
+#HS-header {
+  display: flex;
+  margin-top: 50px;
+  justify-content: center;
+  align-items: center;
+}
+
+#back,
+#clear {
+  outline: none;
+  padding: 10px 20px 10px;
+  margin-bottom: 5px;
+  background-color: #571089;
+  border: 1px solid;
+  border-color: black;
+  border-radius: 5px;
+  color: #fff;
+  max-width: 160px;
+  align-items: center;
+  justify-content: center;
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 18px;
+}
+
+#back:hover,
+#clear:hover {
+  background-color: #9d4edd;
+  transition: 0.5s;
+}
 
 #timeStamp {
   font-weight: bold;
@@ -16,12 +45,11 @@
   margin-left: 80%;
   width: 150px;
   border-radius: 10%;
-padding: 10px 10px; 
-  background-color:#571089; 
+  padding: 10px 10px;
+  background-color: #571089;
   border: solid;
   border-radius: 5px;
   color: #fff;
-
 }
 
 body {
@@ -37,8 +65,7 @@ body {
   align-items: flex-start;
   margin: 10px;
   width: 200px;
- 
-
+  height: 100px;
 }
 
 #name {
@@ -46,20 +73,18 @@ body {
 }
 
 #questiontext {
-  font-family: Verdana, Tahoma, sans-serif;
+  font-family: "Roboto Condensed", sans-serif;
   font-size: 18px;
-  font-weight: 700;
 }
 
 #questionBox,
 .intro {
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 18px;
   width: 800px;
   max-width: 60%;
-  padding: 5vh;
   margin: auto;
   text-align: center;
-  align-items: center;
-  justify-content: center;
   background-color: #fff;
 }
 
@@ -71,51 +96,57 @@ body {
   width: auto;
 }
 
-#startButton, #submitButton {
+#startButton,
+#submitButton {
   font-weight: bold;
   margin-left: 40%;
   display: flex;
   text-align: center;
   justify-content: center;
- padding-top: 10px; 
- padding-bottom: 16px;
-
-}
-
-label, text, input {
-  font-family: Verdana, Tahoma, sans-serif;
-  font-size: 16px;
   padding-top: 10px;
+  padding-bottom: 16px;
 }
 
-
+label,
+text,
+input {
+  font-family: Verdana, Tahoma, sans-serif;
+  font-size: 18px;
+  margin: 5px;
+  padding-bottom: 16px;
+  font-family: "Rubik", sans-serif;
+}
 
 .anbtn1,
 .anbtn2,
 .anbtn3,
 .anbtn4,
 li,
-#startButton, #submitButton {
+#startButton,
+#submitButton {
   outline: none;
-  padding: 10px 20px;
+  padding: 10px 20px 10px;
+  margin-bottom: 5px;
   background-color: #571089;
   border: 1px solid;
   border-color: black;
   border-radius: 5px;
   color: #fff;
-  max-width: fit-content;
-  font-weight: medium;
-  font-size: medium;
+  max-width: 160px;
   align-items: center;
   justify-content: center;
   display: flex;
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 18px;
 }
 
 .anbtn1:hover,
 .anbtn2:hover,
 .anbtn3:hover,
 .anbtn4:hover,
-#startButton:hover, li:hover, #submitButton:hover {
+#startButton:hover,
+li:hover,
+#submitButton:hover {
   background-color: #9d4edd;
   transition: 0.5s;
 }

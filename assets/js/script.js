@@ -1,6 +1,4 @@
 // Start of global variables
-var score = 0;
-var qIndex = 0;
 var mkParagraph = document.createElement("p");
 var timeStamp = document.querySelector("#timeStamp");
 var penalty = 10;
@@ -9,6 +7,8 @@ var timer = document.querySelector("#startButton");
 var questionsDiv = document.querySelector("#questionsDiv");
 var intro = document.querySelector("intro");
 var holdInterval = 0;
+var score = 0;
+var qIndex = 0;
 //End of global variables
 
 //Start of questions, text and answer section
@@ -95,7 +95,7 @@ function scoreKeeper(event) {
       createDiv.textContent = "That's Correct!";
     } else {
       timeLeft = timeLeft - penalty;
-      createDiv.textContent = "Sorry, that's not quite the answer!";
+      createDiv.textContent = "Sorry, that's incorrect!";
     }
   }
   qIndex++;
@@ -166,22 +166,48 @@ function finishedQuiz() {
     var userName = inputBox.value;
 
     if (userName === null) {
-      alert("Oops! Please enter a valid entry!");
+      alert("This is awkward! Please enter a valid entry!");
     } else {
       var finalScore = {
         name: userName,
         score: timeRemaining,
       };
       console.log(finalScore);
-      var allScores = localStorage.getItem("allScores");
-      if (allScores === null) {
-        allScores = [];
+      var highScore = localStorage.getItem("highScore");
+      if (highScore === null) {
+        highScore = [];
       } else {
-        allScores = JSON.parse(allScores);
+        highScore = JSON.parse(highScore);
       }
-      allScores.push(finalScore);
-      var newScore = JSON.stringify(allScores);
-      localStorage.setItem("allScores", newScore);
+      highScore.push(finalScore);
+      var newScore = JSON.stringify(highScore);
+      localStorage.setItem("highScore", newScore);
+      window.location.replace("./hs-index.html");
     }
   });
 }
+
+// start of high scores page js
+var highScores = document.querySelector("#highscores");
+var clear = document.querySelector("#clear");
+var back = document.querySelector("#back");
+
+clear.addEventListener("click", function () {
+  localStorage.clear();
+  //location.reload();
+});
+
+var scores = localStorage.getItem("scores");
+scores = JSON.parse(scores);
+
+if (scores !== null) {
+  for (var i = 0; i < scores.length; i++) {
+    var createLi = document.createElement("li");
+    createLi.textContent = scores[i].initials + " " + scores[i].score;
+    highScores.appendChild(createLi);
+  }
+}
+// go back to home page
+goBack.addEventListener("click", function () {
+  location.replace("./index.html");
+});
